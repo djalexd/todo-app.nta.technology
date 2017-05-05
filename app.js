@@ -4,7 +4,7 @@ var tasks = require('./routes/tasks');
 var http = require('http');
 var path = require('path');
 var mongoskin = require('mongoskin');
-var db = mongoskin.db('mongodb://localhost:27017/todo?auto_reconnect', {safe:true});
+var db = mongoskin.db(process.env.DB || 'mongodb://localhost:27017/todo?auto_reconnect', {safe:true});
 var app = express();
 
 var favicon = require('serve-favicon'),
